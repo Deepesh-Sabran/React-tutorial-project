@@ -1,4 +1,5 @@
 import React from "react";
+import BaseHoc from "../Layout-HOC/BaseHoc";
 
 class ClassComponent extends React.Component {
   render() {
@@ -12,4 +13,4 @@ class ClassComponent extends React.Component {
   }
 }
 
-export default ClassComponent;
+export default BaseHoc(ClassComponent);

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import BaseHoc from "../Layout-HOC/BaseHoc";
 
 const FunctionComponent = (props) => {
   // here we are using HOOK to deal with state information
@@ -36,4 +37,4 @@ const FunctionComponent = (props) => {
   );
 };
 
-export default FunctionComponent;
+export default BaseHoc(FunctionComponent);

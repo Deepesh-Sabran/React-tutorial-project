@@ -58,7 +58,7 @@
 
     ** whatever we do in setState() it will be reflected on state automatically
 
-# props => when we need to pass infformation from one component to other component then we use props.
+# props => when we need to pass information from one component to other component then we use props.
 
     >> parent node -> child node
     >> we can assume it like uni-directional inheritance
@@ -80,3 +80,82 @@
             </div>
         );
     }
+
+# ex: what we perform :
+
+    function App() {
+        const [name, setName] = useState("DS");
+        const car = "mustang";
+        return (
+            <div className="App">
+            <p>Jay Shree Ram !!</p>
+            <ClassComponent /> {/* child component */}
+            {/* passing the props here */} {/* child component */}
+            <FunctionComponent name={name} age={25} car={car} setName={setName} />
+            {/* {name} it is internal defined variable, car also */}
+            {/* {setName} it is internal ddefined function */}
+            where as age={25} is statically passed
+            </div>
+        );
+    }
+
+# Routing :
+
+    >> It's basically an end-point where we pass any information from one particular page to other page
+
+    >> Router > Routes > Route
+
+    .. Router : where we have all kind of Routes
+    .. Routes(group of route) : Where we encapsulating multiple type of Route
+    ex: /home /aboutUs /contact etc.
+
+# to download router : npm i react-router-dom
+
+version ^6.20.1 = this means current version is 6, minor cganges is 20, and bug fixed after releasing is 1...
+if we need to do some major cganges then it shows in place of 6 like next version is 7
+
+# workflow according to router
+
+    >> index.js(browser router) >> app.js >> different routes
+    >> index.js >> app.js >> pages
+
+    >> ex: webpage
+                - /contact > /aboutUs > /signIn
+
+# Layout (HOC || High Order Component):
+
+    <!-- HOC's can add additional info/features to the existing component -->
+
+    >> It's a different path in a component
+
+    /signIn
+        > let suppose it have Nav & Footer so these are the layot for signIn
+
+
+    *** Basically let suppose we need a  Nav & Footer for our ClassComponent & FunctionalComponent so we dont need to define it multiple times like in ClassComponent & FunctionalComponent.... Rather than that we define the Nav & Footer in a HOC & then wrap those Component within HOC ....
+
+# React Lifecycle Method
+
+    >> render() {
+
+    }
+
+# cdm (componentDidMount) = let's say in a web page i've 4 components & at the time of loadi (onload) i need only 2 component to be shown .... so this cdm checks that like the condition is working fine or not ...
+
+    ** cdm gives boolean value as TRUE or FALSE
+
+    componentDidMount() {
+        Welcome to my Application ...
+        We can add any thing as of our choice ...
+    }
+
+    it means wehen we open the app. initially we got to see this message on our app screen (Welcome to my Application ...)
+
+# cdu (componentDidUpdate) = it checks that particular component get updated or not ...
+
+    componentDidUpdate() {
+        input tab => ... hit-enter
+    }
+    here when we hit-enter after filling the form lets say .. so we have new fields.. so this "cdu" checks this like it got updated or not
+
+# cwu (componentWillUnmount) = basically before clossing any buffer like system or any thing which consume some memory & you need to relese those memory before closing that particular component, then we'll do it with "cwu" ...
